@@ -2,8 +2,8 @@ function onCreate()
 	--Iterate over all notes
 	for i = 0, getProperty('unspawnNotes.length')-1 do
 		--Check if the note is an Instakill Note
-		if getPropertyFromGroup('unspawnNotes', i, 'noteType') == '0,000000000001power' then
-			setPropertyFromGroup('unspawnNotes', i, 'texture', '0,000000000001power'); --Change texture
+		if getPropertyFromGroup('unspawnNotes', i, 'noteType') == 'Instakill Note' then
+			setPropertyFromGroup('unspawnNotes', i, 'texture', 'instkill'); --Change texture
 			setPropertyFromGroup('unspawnNotes', i, 'hitHealth', '-500'); --Default value is: 0.023, health gained on hit
 			setPropertyFromGroup('unspawnNotes', i, 'missHealth', '0'); --Default value is: 0.0475, health lost on miss
 			setPropertyFromGroup('unspawnNotes', i, 'hitCausesMiss', true);
@@ -22,7 +22,7 @@ end
 -- noteType: The note type string/tag
 -- isSustainNote: If it's a hold note, can be either true or false
 function goodNoteHit(id, noteData, noteType, isSustainNote)
-	if noteType == '0,000000000001power' then
+	if noteType == 'Instakill Note' then
 		-- put something here if you want
 	end
 end
@@ -30,7 +30,7 @@ end
 -- Called after the note miss calculations
 -- Player missed a note by letting it go offscreen
 function noteMiss(id, noteData, noteType, isSustainNote)
-	if noteType == '0,000000000001power' then
+	if noteType == 'Instakill Note' then
 		-- put something here if you want
 	end
 end
